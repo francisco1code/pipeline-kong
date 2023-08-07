@@ -12,8 +12,8 @@ jobs:
       with:
         serverUrl: http://localhost:8081/
         username: admin
-        password: ${{ secrets.PASSWORD }}
+        password: Swastaiger
         format: raw
-        repository: http://localhost:8081/repository/luarocks-local/
-        assets: extension=.all.rock
+        repository: luarocks-local
+        assets: extension=rock
         filename: ./kong-plugin-internal-basic-auth-1.0.0-1.all.rock
