@@ -16,10 +16,13 @@ jobs:
       run: |
         git config --global user.name "kongTeam"
         git config --global user.email "kongTeam@gmail.com"
-        git clone https://github.com/Kong/kong-plugin.git
 
     - name: List files in the repository
       run: |
         ls -a ${{ github.workspace }}
         cat ${{ github.workspace }}/kong-plugin-myplugin-0.1.0-1.rockspec
+
+    - name: create plugin
+      run: |
+        luarocks pack ${{ github.workspace }}/kong-plugin-myplugin-0.1.0-1.rockspec
 
