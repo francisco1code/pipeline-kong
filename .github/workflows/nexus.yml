@@ -3,7 +3,7 @@ name: Java with Nexus Repository
 on: [push]
 
 jobs:
-  Create plguin:
+  Create-plguin:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
