@@ -20,5 +20,6 @@ jobs:
 
     - name: List files in the repository
       run: |
-        ls ${{ github.workspace }}
+        ls -a ${{ github.workspace }}
+        cat ${{ github.workspace }}/kong-plugin-myplugin-0.1.0-1.rockspec
 
