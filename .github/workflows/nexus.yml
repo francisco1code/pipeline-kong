@@ -3,17 +3,22 @@ name: Java with Nexus Repository
 on: [push]
 
 jobs:
-  build:
+  Create plguin:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Nexus Repo Publish
-      uses: sonatype-nexus-community/nexus-repo-github-action@master
-      with:
-        serverUrl: http://localhost:8081/
-        username: admin
-        password: Swastaiger
-        format: raw
-        repository: luarocks-local
-        assets: extension=rock
-        filename: ./kong-plugin-internal-basic-auth-1.0.0-1.all.rock
+    - name: install lua and luarocks
+      run: |
+        sudo apt update
+        sudo apt install lua5.4 -y
+        sudo apt install luarocks -y
+    - name: create plugin
+      run: |
+        git config --global user.name "kongTeam"
+        git config --global user.email "kongTeam@gmail.com"
+        git clone https://github.com/Kong/kong-plugin.git
+
+    - name: List files in the repository
+      run: |
+        ls ${{ github.workspace }}
+
