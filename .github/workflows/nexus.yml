@@ -27,6 +27,5 @@ jobs:
         git clone https://github.com/Kong/kong-plugin.git plugin
         ls -a ${{ github.workspace }}
         cd plugin
-        ls -a ${{ github.workspace }}
         luarocks pack ${{ github.workspace }}/kong-plugin-myplugin-0.1.0-1.rockspec
 
